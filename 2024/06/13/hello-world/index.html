@@ -774,6 +774,8 @@
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             
+                <span id="translate">|&nbsp;繁/简：</span><a id="translateLink" href="javascript:translatePage();">繁</a>
+            
             <br>
             <span id="sitetime"></span>
             <br>
@@ -787,13 +789,15 @@
             
             
                 <span id="busuanzi_container_site_pv" style='display:none'>
-                    <i class="fa fa-heart-o"></i>
+                    <i class="far fa-eye"></i>
                     本站总访问量 <span id="busuanzi_value_site_pv" class="white-color"></span>
                 </span>
             
             
                 <span id="busuanzi_container_site_uv" style='display:none'>
-                    人次,&nbsp;访客人数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
+                    人次,&nbsp;
+                    <i class="fas fa-users"></i>&nbsp;
+                    访客人数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
                 </span>
             
             <br>
@@ -1041,6 +1045,17 @@ $(function () {
 
     
 
+    
+        <script type="text/javascript" src="/js/tw_cn.js"></script>
+        <script type="text/javascript">
+          var defaultEncoding = 2; //网站编写字体是否繁体，1-繁体，2-简体
+          var translateDelay = 0; //延迟时间,若不在前, 要设定延迟翻译时间, 如100表示100ms,默认为0
+          var cookieDomain = "https://swq2024.github.io"; //Cookie地址, 一定要设定, 通常为你的网址
+          var msgToTraditionalChinese = "繁"; //此处可以更改为你想要显示的文字
+          var msgToSimplifiedChinese = "简"; //同上，但两处均不建议更改
+          var translateButtonId = "translateLink"; //默认互换id
+          translateInitilization();
+        </script>
     
 
     
