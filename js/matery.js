@@ -187,10 +187,10 @@ setTimeout(function () {
 //黑夜模式判断
 if (localStorage.getItem('isDark') === '1') {
     document.body.classList.add('DarkMode');
-    // $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')
-    $('#sum-moon-icon').classList.toggle('fa-moon')
+    $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')
+    // $('#sum-moon-icon').classList.toggle('fa-moon')
 } else {
     document.body.classList.remove('DarkMode');
-    // $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon')
-    $('#sum-moon-icon').classList.toggle('fa-sun')
+    $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon')
+    // $('#sum-moon-icon').classList.toggle('fa-sun')
 }
