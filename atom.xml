@@ -6,7 +6,7 @@
   <link href="https://swq2024.github.io/atom.xml" rel="self"/>
   
   <link href="https://swq2024.github.io/"/>
-  <updated>2024-06-13T14:46:35.129Z</updated>
+  <updated>2024-06-15T15:39:01.112Z</updated>
   <id>https://swq2024.github.io/</id>
   
   <author>
@@ -17,15 +17,42 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>The page doesn&#39;t ban Image Lazy Loading</title>
+    <link href="https://swq2024.github.io/2024/06/15/nolazyimages/"/>
+    <id>https://swq2024.github.io/2024/06/15/nolazyimages/</id>
+    <published>2024-06-15T14:35:37.000Z</published>
+    <updated>2024-06-15T15:39:01.112Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;img src=&quot;/images/image01.jpeg&quot; alt=&quot;&quot; width=&quot;200px&quot; height=&quot;200px&quot;/&gt;
+
+&lt;img src=&quot;/images/image02.jpg&quot; alt=&quot;&quot; width=&quot;200px&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="图片懒加载" scheme="https://swq2024.github.io/tags/%E5%9B%BE%E7%89%87%E6%87%92%E5%8A%A0%E8%BD%BD/"/>
+    
+  </entry>
+  
+  <entry>
     <title>rebuildMark</title>
     <link href="https://swq2024.github.io/2024/06/13/rebuildmark/"/>
     <id>https://swq2024.github.io/2024/06/13/rebuildmark/</id>
     <published>2024-06-13T14:46:35.000Z</published>
-    <updated>2024-06-13T14:46:35.129Z</updated>
+    <updated>2024-06-15T14:32:59.757Z</updated>
     
     
     
     
+    
+    <category term="markdown" scheme="https://swq2024.github.io/tags/markdown/"/>
     
   </entry>
   
