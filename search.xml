@@ -8,7 +8,7 @@
       <link href="/2024/06/15/nolazyimages/"/>
       <url>/2024/06/15/nolazyimages/</url>
       
-        <content type="html"><![CDATA[<img src="/images/image01.jpeg" class="[]" title="[200] [200] &quot; &quot; &quot; &quot;"><img src="/images/image01.jpeg" alt="" width="200px" height="200px"/><img src="/images/image02.jpg" alt="" width="200px" height="200px"/><img src="/images/image03.jpg" alt="" width="200px" height="200px"/><img src="/images/image04.jpg" alt="" width="200px" height="200px"/><img src="/images/image05.jpg" alt="" width="200px" height="200px"/>]]></content>
+        <content type="html"><![CDATA[<!-- 使用 Hexo 的img标签插入图片 --><img src="/images/image01.jpeg" class="" width="200" height="200" title="test hexo tag plugin 200x200"><!-- 使用 html 的img标签插入图片 --><img src="/images/image01.jpeg" width="200" height="200" alt="test html tag 200x200"/><!-- 在 Hexo 中使用 Markdown 的原生语法无法设置图片的大小 --><!-- <div style="width: 400px">    ![test markdown](https://s2.loli.net/2024/06/16/aAGtC6HzW9Lw8hc.jpg)</div> --><!-- 标准 Markdown 图片语法引用相关图片：![title](url) --><!-- 扩展了 Markdown 的插图语法(可设置图片大小)在主题source/js/hexo_resize_image.js--><!-- 用法：    1.可指定像素        ![指定宽高](/image/test.jpg?200x200)        ![仅指定width](/image/test.jpg?200x)        ![仅指定height](/image/test.jpg?x200)    2.可指定缩放比例，等比例缩放图片大小至 x %        ![指定比例](/image/test.jpg?40)    示例如下： --><p> <img src="https://s2.loli.net/2024/06/16/aAGtC6HzW9Lw8hc.jpg?400x400" alt="test markdown 400x400"></p>]]></content>
       
       
       
