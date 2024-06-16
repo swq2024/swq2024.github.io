@@ -10,6 +10,7 @@ origin site: https://bobcn.github.io/2018/03/24/hexo_reset_image_size/
 
 根站点配置文件_config.yml 关闭外链跳转插件
 
+x 外链跳转插件的作用
 x 导航侧边栏设置
 x 切换页面音乐中断 pjax插件
 
