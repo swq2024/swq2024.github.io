@@ -54,8 +54,37 @@
 
     <!-- 添加动态诗词 -->
     <!-- <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script> -->
+
+    <!-- 添加页面加载动画 -->
+    <link rel="stylesheet" type="text/css" href="/css/loading.css">
+
 <meta name="generator" content="Hexo 7.2.0"><link rel="alternate" href="/atom.xml" title="孙文强的博客" type="application/atom+xml">
 </head>
+
+
+<!-- 添加页面加载动画 -->
+
+    <div id="loading-box">
+      <div class="loading-left-bg"></div>
+      <div class="loading-right-bg"></div>
+      <div class="spinner-box">
+        <div class="configure-border-1">
+          <div class="configure-core"></div>
+        </div>
+        <div class="configure-border-2">
+          <div class="configure-core"></div>
+        </div>
+        <div class="loading-word">加载中...</div>
+      </div>
+    </div>
+    <!-- 页面加载动画 -->
+    <script>
+      $(document).ready(function () {
+        document.body.style.overflow = 'auto';
+        document.getElementById('loading-box').classList.add("loaded")
+      })
+    </script>
+  
 
 
 <body>
@@ -1225,6 +1254,16 @@ $(function () {
                 }, 3e3))
         })
     </script>
+    <!-- 图片冒泡 -->
+    
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            document.write(
+                '<script type="text/javascript" src="/libs/others/buble.js"><\/script>'
+            );
+        </script>
+    
 
     <!-- 雪花特效 -->
     
@@ -1289,6 +1328,27 @@ $(function () {
     <!-- 转载于 https://bobcn.github.io/2018/03/24/hexo_reset_image_size/ -->
     <script src="/js/hexo_resize_image.js"></script>
 
+        <script src="//cdn.jsdelivr.net/npm/js-base64/base64.min.js"></script>
+        <script>
+        const hasAttr = (e,a) => a.some(_=> e.attr(_)!==undefined);
+        $('a').each(function() {
+          const $this = $(this);
+          if(hasAttr($this,["data-fancybox","ignore-external-link"])) return;
+          const href = $this.attr('href');
+          if (href && href.match('^((http|https|thunder|qqdl|ed2k|Flashget|qbrowser|ftp|rtsp|mms)://)')) {
+            const strs = href.split('/');
+            if (strs.length >= 3) {
+                const host = strs[2];
+                if (host !== 'your_domain' || window.location.host) {
+                    $this.attr('href', '/go.html?u='+Base64.encode(href)+'').attr('rel', 'external nofollow noopener noreferrer');
+                    if (true) {
+                        $this.attr('target', '_blank');
+                    }
+                }
+            }
+          }
+        });
+        </script>
         <style>
             [bg-lazy] {
                 background-image: none !important;
