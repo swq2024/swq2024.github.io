@@ -1,0 +1,17 @@
+My GitHub Blog.
+site: https://swq2024.github.io/
+
+添加页面预加载动画和背景图片冒泡
+site: https://blog.csdn.net/m0_49448331/article/details/136986314
+site: https://blog.csdn.net/weixin_43662760/article/details/122311217?spm=1001.2101.3001.6650.1&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7EPaidSort-1-122311217-blog-122311008.235%5Ev43%5Epc_blog_bottom_relevance_base5&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7EPaidSort-1-122311217-blog-122311008.235%5Ev43%5Epc_blog_bottom_relevance_base5&utm_relevant_index=2
+
+图片的markdown语法扩展自定义大小,比例
+origin site: https://bobcn.github.io/2018/03/24/hexo_reset_image_size/
+
+根站点配置文件_config.yml 关闭外链跳转插件
+
+x 外链跳转插件的作用
+x 导航侧边栏设置
+x 切换页面音乐中断 pjax插件
+
+attention：编辑后，gulp压缩代码
