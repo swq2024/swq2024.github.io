@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="CV, Jackson Playground">
-    <meta name="description" content="本网站是个人兴趣爱好，总结分享经验，记录生活点滴的平台，希望在以后的学习旅途中，走出自己的风景。">
+    <meta name="keywords" content="如何在JavaScript中交换两个数组元素, Jackson Playground">
+    <meta name="description" content="数组交换元素">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>CV | Jackson Playground</title>
+    <title>如何在JavaScript中交换两个数组元素 | Jackson Playground</title>
     <link rel="icon" type="image/png" href="/Logo_1.png">
     
 
@@ -525,12 +525,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">CV</h1>
+                    <h1 class="description center-align post-title">如何在JavaScript中交换两个数组元素</h1>
                 </div>
             </div>
         </div>
@@ -552,9 +552,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/JavaScript/">
+                                <span class="chip bg-color">JavaScript</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -566,7 +570,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2024-06-16
+                    2024-09-05
                 </div>
                 
 
@@ -575,14 +579,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    70
+                    541
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -605,9 +609,90 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>自定义文章内容，编写一个 index.html 放入 aboutme 文件夹下<br>然后在站点配置文件下，找到 skip_render，在后面添加属性，如下：</p>
-<figure class="highlight yaml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 其意思为在对文件进行渲染时跳过aboutme文件下的所有文件</span></span><br><span class="line"><span class="attr">skip_render:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">aboutme/**</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">aaa/**</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">bbb/**</span></span><br></pre></td></tr></tbody></table></figure>
-<p>😀</p>
+                <h1 id="交换两个数组元素的方法"><a href="#交换两个数组元素的方法" class="headerlink" title="交换两个数组元素的方法"></a>交换两个数组元素的方法</h1><p>在 JavaScript 中有时需要交换数组中的两个元素，可以使用以下三种方法之一。</p>
+<h2 id="临时变量-temp"><a href="#临时变量-temp" class="headerlink" title="临时变量 temp"></a>临时变量 temp</h2><p>使用一个临时变量 temp 分为以下三个步骤：</p>
+<ol>
+<li>创建一个临时变量来保存第一个元素的值；</li>
+<li>将第一个元素的值设置为第二个元素的值；</li>
+<li>将第二个元素的值设置为临时变量中的值。</li>
+</ol>
+<pre>    <code style="font-size: 20px; background-color: rgba(31,31,31,.31)">
+let myArray = [1, 2, 3, 4, 5];
+
+const temp = myArray[0];
+myArray[0] = myArray[1];
+myArray[1] = temp;
+
+console.log(myArray); // [2, 1, 3, 4, 5]
+</code>
+</pre>
+
+<p>封装为函数：</p>
+<pre>    <code style="font-size: 20px; background-color: rgba(31,31,31,.31)">
+const swapElements =
+(array, index1, index2) =&gt; {
+    let temp = array[index1];
+    array[index1] = array[index2];
+    array[index2] = temp;
+};
+let myArray = [1, 2, 3, 4, 5];
+swapElements(myArray, 0, 1);
+console.log(myArray); // [2, 1, 3, 4, 5]
+</code>
+</pre>
+
+<h2 id="解构赋值-推荐"><a href="#解构赋值-推荐" class="headerlink" title="解构赋值(推荐)"></a>解构赋值(推荐)</h2><p>只需创建一个新的数组，其中包含按特定顺序排列的两个元素，然后将其分配给一个新的数组，其中包含按相反顺序排列的两个元素。实现如下：</p>
+<pre>    <code style="font-size: 20px; background-color: rgba(31,31,31,.31)">
+let myArray = [1, 2, 3, 4, 5];
+
+[myArray[0], myArray[1]] = [myArray[1], myArray[0]];
+
+console.log(myArray); // [2, 1, 3, 4, 5]
+</code>
+</pre>
+
+<p>封装为函数：</p>
+<pre>    <code style="font-size: 20px; background-color: rgba(31,31,31,.31)">
+const swapElements =
+(array, index1, index2) =&gt;
+[myArray[index1], myArray[index2]] = [myArray[index2], myArray[index1]];
+
+let myArray = [1, 2, 3, 4, 5];
+swapElements(myArray, 0, 1);
+console.log(myArray); // [2, 1, 3, 4, 5]
+</code>
+</pre>
+
+<h2 id="Splice-方法"><a href="#Splice-方法" class="headerlink" title="Splice() 方法"></a>Splice() 方法</h2><p>使用 ES6 中的 <code>splice()</code>数组方法：从一个数组中移除一个或多个元素，然后用任何指定的元素替换这些元素。</p>
+<p><code>splice()</code>方法返回值：</p>
+<ul>
+<li>一个包含了删除的元素的数组。</li>
+<li>如果只移除一个 a 元素，则只返回一个 a 元素的数组。</li>
+<li>如果没有删除任何元素，则返回一个空数组。</li>
+</ul>
+<p>语法：<code>array.splice(index, howmany, element1, ....., elementX)</code></p>
+<p>具体实现：</p>
+<pre>    <code style="font-size: 20px; background-color: rgba(31,31,31,.31)">
+let myArray = [1, 2, 3, 4, 5];
+
+myArray[0] = myArray.splice(1, 1, myArray[0])[0]; # 返回索引为1的元素数组
+
+console.log(myArray); // [2, 1, 3, 4, 5]
+</code>
+</pre>
+
+<p>封装为函数：</p>
+<pre>    <code style="font-size: 20px; background-color: rgba(31,31,31,.31)">
+const swapElements =
+(array, index1, index2) =&gt;
+myArray[index1] = myArray.splice(index2, 1, myArray[index1])[0];
+let myArray = [1, 2, 3, 4, 5];
+swapElements(myArray, 0, 1);
+console.log(myArray); // [2, 1, 3, 4, 5]
+</code>
+</pre>
+
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>以上三种方法均可实现数组中任意两元素交换，为了方便理解和使用，最好使用 ES6 的<strong>解构赋值</strong>方法😉。</p>
 
                 
             </div>
@@ -624,7 +709,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="/about" rel="external nofollow noreferrer">孙文强</a>
+                    <a href="/about" rel="external nofollow noreferrer">Jackson</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -634,7 +719,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://swq2024.github.io/aboutme/index.html">https://swq2024.github.io/aboutme/index.html</a>
+                    <a href="https://swq2024.github.io/2024/09/05/swap-elements/">https://swq2024.github.io/2024/09/05/swap-elements/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -647,7 +732,7 @@
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="/about" target="_blank">孙文强</a>
+                    <a href="/about" target="_blank">Jackson</a>
                     !
                 </span>
             </div>
@@ -671,7 +756,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/JavaScript/">
+                                    <span class="chip bg-color">JavaScript</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -763,39 +852,45 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/aboutme/index.html">
+                <a href="/2024/09/09/git-commit/">
                     <div class="card-image">
                         
                         
-                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgdmlld0JveD0iMCAwIDI0IDI0Ij48Y2lyY2xlIGN4PSI0IiBjeT0iMTIiIHI9IjMiIGZpbGw9ImN1cnJlbnRDb2xvciI+PGFuaW1hdGUgaWQ9InN2Z1NwaW5uZXJzM0RvdHNTY2FsZTAiIGF0dHJpYnV0ZU5hbWU9InIiIGJlZ2luPSIwO3N2Z1NwaW5uZXJzM0RvdHNTY2FsZTEuZW5kLTAuMjVzIiBkdXI9IjAuNzVzIiB2YWx1ZXM9IjM7LjI7MyIvPjwvY2lyY2xlPjxjaXJjbGUgY3g9IjEyIiBjeT0iMTIiIHI9IjMiIGZpbGw9ImN1cnJlbnRDb2xvciI+PGFuaW1hdGUgYXR0cmlidXRlTmFtZT0iciIgYmVnaW49InN2Z1NwaW5uZXJzM0RvdHNTY2FsZTAuZW5kLTAuNnMiIGR1cj0iMC43NXMiIHZhbHVlcz0iMzsuMjszIi8+PC9jaXJjbGU+PGNpcmNsZSBjeD0iMjAiIGN5PSIxMiIgcj0iMyIgZmlsbD0iY3VycmVudENvbG9yIj48YW5pbWF0ZSBpZD0ic3ZnU3Bpbm5lcnMzRG90c1NjYWxlMSIgYXR0cmlidXRlTmFtZT0iciIgYmVnaW49InN2Z1NwaW5uZXJzM0RvdHNTY2FsZTAuZW5kLTAuNDVzIiBkdXI9IjAuNzVzIiB2YWx1ZXM9IjM7LjI7MyIvPjwvY2lyY2xlPjwvc3ZnPg==" data-original="/medias/featureimages/3.jpg" class="responsive-img" alt="CV">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgdmlld0JveD0iMCAwIDI0IDI0Ij48Y2lyY2xlIGN4PSI0IiBjeT0iMTIiIHI9IjMiIGZpbGw9ImN1cnJlbnRDb2xvciI+PGFuaW1hdGUgaWQ9InN2Z1NwaW5uZXJzM0RvdHNTY2FsZTAiIGF0dHJpYnV0ZU5hbWU9InIiIGJlZ2luPSIwO3N2Z1NwaW5uZXJzM0RvdHNTY2FsZTEuZW5kLTAuMjVzIiBkdXI9IjAuNzVzIiB2YWx1ZXM9IjM7LjI7MyIvPjwvY2lyY2xlPjxjaXJjbGUgY3g9IjEyIiBjeT0iMTIiIHI9IjMiIGZpbGw9ImN1cnJlbnRDb2xvciI+PGFuaW1hdGUgYXR0cmlidXRlTmFtZT0iciIgYmVnaW49InN2Z1NwaW5uZXJzM0RvdHNTY2FsZTAuZW5kLTAuNnMiIGR1cj0iMC43NXMiIHZhbHVlcz0iMzsuMjszIi8+PC9jaXJjbGU+PGNpcmNsZSBjeD0iMjAiIGN5PSIxMiIgcj0iMyIgZmlsbD0iY3VycmVudENvbG9yIj48YW5pbWF0ZSBpZD0ic3ZnU3Bpbm5lcnMzRG90c1NjYWxlMSIgYXR0cmlidXRlTmFtZT0iciIgYmVnaW49InN2Z1NwaW5uZXJzM0RvdHNTY2FsZTAuZW5kLTAuNDVzIiBkdXI9IjAuNzVzIiB2YWx1ZXM9IjM7LjI7MyIvPjwvY2lyY2xlPjwvc3ZnPg==" data-original="/medias/featureimages/6.jpg" class="responsive-img" alt="常见的Git提交规范类型">
                         
-                        <span class="card-title">CV</span>
+                        <span class="card-title">常见的Git提交规范类型</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            git commit -m "xxx"
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-06-16
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2024-09-09
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
-                            孙文强
+                            Jackson
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Git/">
+                        <span class="chip bg-color">Git</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -803,37 +898,44 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/aboutme/index.html">
+                <a href="/2024/06/15/img-lazy-loading/">
                     <div class="card-image">
                         
                         
-                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgdmlld0JveD0iMCAwIDI0IDI0Ij48Y2lyY2xlIGN4PSI0IiBjeT0iMTIiIHI9IjMiIGZpbGw9ImN1cnJlbnRDb2xvciI+PGFuaW1hdGUgaWQ9InN2Z1NwaW5uZXJzM0RvdHNTY2FsZTAiIGF0dHJpYnV0ZU5hbWU9InIiIGJlZ2luPSIwO3N2Z1NwaW5uZXJzM0RvdHNTY2FsZTEuZW5kLTAuMjVzIiBkdXI9IjAuNzVzIiB2YWx1ZXM9IjM7LjI7MyIvPjwvY2lyY2xlPjxjaXJjbGUgY3g9IjEyIiBjeT0iMTIiIHI9IjMiIGZpbGw9ImN1cnJlbnRDb2xvciI+PGFuaW1hdGUgYXR0cmlidXRlTmFtZT0iciIgYmVnaW49InN2Z1NwaW5uZXJzM0RvdHNTY2FsZTAuZW5kLTAuNnMiIGR1cj0iMC43NXMiIHZhbHVlcz0iMzsuMjszIi8+PC9jaXJjbGU+PGNpcmNsZSBjeD0iMjAiIGN5PSIxMiIgcj0iMyIgZmlsbD0iY3VycmVudENvbG9yIj48YW5pbWF0ZSBpZD0ic3ZnU3Bpbm5lcnMzRG90c1NjYWxlMSIgYXR0cmlidXRlTmFtZT0iciIgYmVnaW49InN2Z1NwaW5uZXJzM0RvdHNTY2FsZTAuZW5kLTAuNDVzIiBkdXI9IjAuNzVzIiB2YWx1ZXM9IjM7LjI7MyIvPjwvY2lyY2xlPjwvc3ZnPg==" data-original="/medias/featureimages/3.jpg" class="responsive-img" alt="CV">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgdmlld0JveD0iMCAwIDI0IDI0Ij48Y2lyY2xlIGN4PSI0IiBjeT0iMTIiIHI9IjMiIGZpbGw9ImN1cnJlbnRDb2xvciI+PGFuaW1hdGUgaWQ9InN2Z1NwaW5uZXJzM0RvdHNTY2FsZTAiIGF0dHJpYnV0ZU5hbWU9InIiIGJlZ2luPSIwO3N2Z1NwaW5uZXJzM0RvdHNTY2FsZTEuZW5kLTAuMjVzIiBkdXI9IjAuNzVzIiB2YWx1ZXM9IjM7LjI7MyIvPjwvY2lyY2xlPjxjaXJjbGUgY3g9IjEyIiBjeT0iMTIiIHI9IjMiIGZpbGw9ImN1cnJlbnRDb2xvciI+PGFuaW1hdGUgYXR0cmlidXRlTmFtZT0iciIgYmVnaW49InN2Z1NwaW5uZXJzM0RvdHNTY2FsZTAuZW5kLTAuNnMiIGR1cj0iMC43NXMiIHZhbHVlcz0iMzsuMjszIi8+PC9jaXJjbGU+PGNpcmNsZSBjeD0iMjAiIGN5PSIxMiIgcj0iMyIgZmlsbD0iY3VycmVudENvbG9yIj48YW5pbWF0ZSBpZD0ic3ZnU3Bpbm5lcnMzRG90c1NjYWxlMSIgYXR0cmlidXRlTmFtZT0iciIgYmVnaW49InN2Z1NwaW5uZXJzM0RvdHNTY2FsZTAuZW5kLTAuNDVzIiBkdXI9IjAuNzVzIiB2YWx1ZXM9IjM7LjI7MyIvPjwvY2lyY2xlPjwvc3ZnPg==" data-original="/medias/featureimages/10.jpg" class="responsive-img" alt="Hexo的图片懒加载插件">
                         
-                        <span class="card-title">CV</span>
+                        <span class="card-title">Hexo的图片懒加载插件</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            图片懒加载插件
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-06-16
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-06-15
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
-                            孙文强
+                            Jackson
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%9B%BE%E7%89%87%E6%87%92%E5%8A%A0%E8%BD%BD/">
+                        <span class="chip bg-color">图片懒加载</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>

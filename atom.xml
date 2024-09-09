@@ -6,7 +6,7 @@
   <link href="https://swq2024.github.io/atom.xml" rel="self"/>
   
   <link href="https://swq2024.github.io/"/>
-  <updated>2024-09-05T14:29:02.893Z</updated>
+  <updated>2024-09-09T07:53:34.259Z</updated>
   <id>https://swq2024.github.io/</id>
   
   <author>
@@ -17,11 +17,34 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>常见的Git提交规范类型</title>
+    <link href="https://swq2024.github.io/2024/09/09/git-commit/"/>
+    <id>https://swq2024.github.io/2024/09/09/git-commit/</id>
+    <published>2024-09-09T06:24:37.000Z</published>
+    <updated>2024-09-09T07:53:34.259Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;常见的Git提交规范类型&quot;&gt;&lt;a href=&quot;#常见的Git提交规范类型&quot; class=&quot;headerlink&quot; title=&quot;常见的Git提交规范类型&quot;&gt;&lt;/a&gt;常见的Git提交规范类型&lt;/h1&gt;&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Git" scheme="https://swq2024.github.io/tags/Git/"/>
+    
+  </entry>
+  
+  <entry>
     <title>如何在JavaScript中交换两个数组元素</title>
-    <link href="https://swq2024.github.io/2024/09/05/swap-elements-md/"/>
-    <id>https://swq2024.github.io/2024/09/05/swap-elements-md/</id>
+    <link href="https://swq2024.github.io/2024/09/05/swap-elements/"/>
+    <id>https://swq2024.github.io/2024/09/05/swap-elements/</id>
     <published>2024-09-05T07:41:42.000Z</published>
-    <updated>2024-09-05T14:29:02.893Z</updated>
+    <updated>2024-09-09T07:53:02.291Z</updated>
     
     
       
@@ -41,10 +64,10 @@
   
   <entry>
     <title>Hexo的图片懒加载插件</title>
-    <link href="https://swq2024.github.io/2024/06/15/lazyimages/"/>
-    <id>https://swq2024.github.io/2024/06/15/lazyimages/</id>
+    <link href="https://swq2024.github.io/2024/06/15/img-lazy-loading/"/>
+    <id>https://swq2024.github.io/2024/06/15/img-lazy-loading/</id>
     <published>2024-06-15T14:35:37.000Z</published>
-    <updated>2024-09-05T12:20:20.714Z</updated>
+    <updated>2024-09-09T07:52:55.118Z</updated>
     
     
       
@@ -67,7 +90,7 @@
     <link href="https://swq2024.github.io/2024/06/13/hello-world/"/>
     <id>https://swq2024.github.io/2024/06/13/hello-world/</id>
     <published>2024-06-13T14:34:34.509Z</published>
-    <updated>2024-09-05T07:19:51.322Z</updated>
+    <updated>2024-09-09T07:53:06.615Z</updated>
     
     
       

@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="CV, Jackson Playground">
-    <meta name="description" content="本网站是个人兴趣爱好，总结分享经验，记录生活点滴的平台，希望在以后的学习旅途中，走出自己的风景。">
+    <meta name="keywords" content="常见的Git提交规范类型, Jackson Playground">
+    <meta name="description" content="git commit -m &#34;xxx&#34;">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>CV | Jackson Playground</title>
+    <title>常见的Git提交规范类型 | Jackson Playground</title>
     <link rel="icon" type="image/png" href="/Logo_1.png">
     
 
@@ -525,12 +525,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">CV</h1>
+                    <h1 class="description center-align post-title">常见的Git提交规范类型</h1>
                 </div>
             </div>
         </div>
@@ -552,9 +552,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Git/">
+                                <span class="chip bg-color">Git</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -566,7 +570,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2024-06-16
+                    2024-09-09
                 </div>
                 
 
@@ -575,14 +579,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    70
+                    778
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -605,9 +609,71 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>自定义文章内容，编写一个 index.html 放入 aboutme 文件夹下<br>然后在站点配置文件下，找到 skip_render，在后面添加属性，如下：</p>
-<figure class="highlight yaml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 其意思为在对文件进行渲染时跳过aboutme文件下的所有文件</span></span><br><span class="line"><span class="attr">skip_render:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">aboutme/**</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">aaa/**</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">bbb/**</span></span><br></pre></td></tr></tbody></table></figure>
-<p>😀</p>
+                <h1 id="常见的Git提交规范类型"><a href="#常见的Git提交规范类型" class="headerlink" title="常见的Git提交规范类型"></a>常见的Git提交规范类型</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>平时在Gitee, GitHub, GitCode等等众多代码托管平台上，阅读其他优秀项目及框架源码时经常看到别人提交的代码记录中包含一些<strong>feat</strong>, <strong>fix</strong>,<strong>chore</strong>,<strong>refactor</strong>等等。第一次看到不以为然，只是觉得看不懂为什么要这样写，明明可以直接简单明了的添加提交信息就行了，但为什么要 <del>画足添蛇</del> 画蛇添足呢? 其实依据这种规范书写提交信息的主要目的是为了<strong>提高提交记录的可读性和自动化处理能力。</strong>，然而在我平时提交时几乎不会区分这些，而是直接写下做了什么的提交信息，草草了之，但为了日后能进一步提高书写规范，今天就来好好整理一下这些“繁文缛节”。</p>
+<p>Git正确的提交规范：</p><pre>git commit -m "subject + : + space + message"</pre><p></p>
+<hr>
+<h2 id="规范类型"><a href="#规范类型" class="headerlink" title="规范类型"></a>规范类型</h2><p><em>注：以下 [gc -m] 指代 git commit -m</em></p>
+<ol>
+<li><strong>feat</strong>(feature): 新功能<ul>
+<li>用于描述新增加的功能</li>
+<li>例如：gc -m “feat: 添加网页icon图标”</li>
+</ul>
+</li>
+<li><strong>fix</strong>: 修补bug<ul>
+<li>用于描述修复了某个bug</li>
+<li>例如：gc -m “fix: 修复用户访问权限的问题”</li>
+</ul>
+</li>
+<li><strong>docs</strong>(documentation)<ul>
+<li>用于对文档的修改，如README.md文件的更新</li>
+<li>例如：gc -m “docs: 更新后端接口文档”</li>
+</ul>
+</li>
+<li><strong>style</strong>: 代码格式(不影响代码运行的变动)<ul>
+<li>用于格式的修正，比如代码缩进或其他样式的改动，不涉及代码逻辑变化</li>
+<li>例如：gc -m “style: 使用prettier格式化代码”</li>
+</ul>
+</li>
+<li><strong>refactor</strong>: 重构代码或重命名<ul>
+<li>用于重构代码，既不是新增功能，也不是修复bug的</li>
+<li>例如：gc -m “控制台优化重构 | 侧边栏收缩icon图标重命名”</li>
+</ul>
+</li>
+<li><strong>pref(performance improvement)</strong>: 性能优化<ul>
+<li>用于提高代码性能的更改</li>
+<li>例如：gc -m “优化查询用户列表的速度”</li>
+</ul>
+</li>
+<li><strong>test</strong>: 增加测试<ul>
+<li>用于添加或修改测试用例</li>
+<li>例如：gc -m “test: 为登录功能添加单元测试”</li>
+</ul>
+</li>
+<li><strong>chore</strong>: 构建过程或辅助工具的变动<ul>
+<li>用于更新构建工具，依赖等</li>
+<li>例如：gc -m “chore: 更新yarn依赖”</li>
+</ul>
+</li>
+<li><strong>build</strong>: 影响构建系统或外部依赖的更改(例如：webpack，npm)<ul>
+<li>例如：gc -m “build: 更新webpack配置”</li>
+</ul>
+</li>
+<li><strong>ci</strong>: 持续集成的配置文件或脚本的变动(例如：Travis，BrowserStack)<ul>
+<li>例如gc -m “ci: 更新Travis配置项”</li>
+</ul>
+</li>
+<li><strong>revert</strong>: 撤销某次提交<ul>
+<li>用于撤销之前的某次提交</li>
+<li>例如：gc -m “revert: 撤销 commit 123456abc”</li>
+</ul>
+</li>
+<li><strong>merge</strong>: 分支合并<ul>
+<li>用于合并分支的提交</li>
+<li>例如：gc -m “merge: 合并 /feature/register 分支”</li>
+</ul>
+</li>
+</ol>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>以上就是几种常见的代码提交规范类型，这些类型有助于保持代码提交记录的清晰性和可读性，使用规范的提交信息可以让项目更加模块化，易于维护和理解，同时也便于团队协作时其他开发人员理解每次提交的意图和信息内容，从而提高代码的可维护性和质量🥳。</p>
 
                 
             </div>
@@ -624,7 +690,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="/about" rel="external nofollow noreferrer">孙文强</a>
+                    <a href="/about" rel="external nofollow noreferrer">Jackson</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -634,7 +700,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://swq2024.github.io/aboutme/index.html">https://swq2024.github.io/aboutme/index.html</a>
+                    <a href="https://swq2024.github.io/2024/09/09/git-commit/">https://swq2024.github.io/2024/09/09/git-commit/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -647,7 +713,7 @@
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="/about" target="_blank">孙文强</a>
+                    <a href="/about" target="_blank">Jackson</a>
                     !
                 </span>
             </div>
@@ -671,7 +737,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/Git/">
+                                    <span class="chip bg-color">Git</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -768,34 +838,42 @@
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/aboutme/index.html">
+                <a href="/2024/09/09/git-commit/">
                     <div class="card-image">
                         
                         
-                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgdmlld0JveD0iMCAwIDI0IDI0Ij48Y2lyY2xlIGN4PSI0IiBjeT0iMTIiIHI9IjMiIGZpbGw9ImN1cnJlbnRDb2xvciI+PGFuaW1hdGUgaWQ9InN2Z1NwaW5uZXJzM0RvdHNTY2FsZTAiIGF0dHJpYnV0ZU5hbWU9InIiIGJlZ2luPSIwO3N2Z1NwaW5uZXJzM0RvdHNTY2FsZTEuZW5kLTAuMjVzIiBkdXI9IjAuNzVzIiB2YWx1ZXM9IjM7LjI7MyIvPjwvY2lyY2xlPjxjaXJjbGUgY3g9IjEyIiBjeT0iMTIiIHI9IjMiIGZpbGw9ImN1cnJlbnRDb2xvciI+PGFuaW1hdGUgYXR0cmlidXRlTmFtZT0iciIgYmVnaW49InN2Z1NwaW5uZXJzM0RvdHNTY2FsZTAuZW5kLTAuNnMiIGR1cj0iMC43NXMiIHZhbHVlcz0iMzsuMjszIi8+PC9jaXJjbGU+PGNpcmNsZSBjeD0iMjAiIGN5PSIxMiIgcj0iMyIgZmlsbD0iY3VycmVudENvbG9yIj48YW5pbWF0ZSBpZD0ic3ZnU3Bpbm5lcnMzRG90c1NjYWxlMSIgYXR0cmlidXRlTmFtZT0iciIgYmVnaW49InN2Z1NwaW5uZXJzM0RvdHNTY2FsZTAuZW5kLTAuNDVzIiBkdXI9IjAuNzVzIiB2YWx1ZXM9IjM7LjI7MyIvPjwvY2lyY2xlPjwvc3ZnPg==" data-original="/medias/featureimages/3.jpg" class="responsive-img" alt="CV">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgdmlld0JveD0iMCAwIDI0IDI0Ij48Y2lyY2xlIGN4PSI0IiBjeT0iMTIiIHI9IjMiIGZpbGw9ImN1cnJlbnRDb2xvciI+PGFuaW1hdGUgaWQ9InN2Z1NwaW5uZXJzM0RvdHNTY2FsZTAiIGF0dHJpYnV0ZU5hbWU9InIiIGJlZ2luPSIwO3N2Z1NwaW5uZXJzM0RvdHNTY2FsZTEuZW5kLTAuMjVzIiBkdXI9IjAuNzVzIiB2YWx1ZXM9IjM7LjI7MyIvPjwvY2lyY2xlPjxjaXJjbGUgY3g9IjEyIiBjeT0iMTIiIHI9IjMiIGZpbGw9ImN1cnJlbnRDb2xvciI+PGFuaW1hdGUgYXR0cmlidXRlTmFtZT0iciIgYmVnaW49InN2Z1NwaW5uZXJzM0RvdHNTY2FsZTAuZW5kLTAuNnMiIGR1cj0iMC43NXMiIHZhbHVlcz0iMzsuMjszIi8+PC9jaXJjbGU+PGNpcmNsZSBjeD0iMjAiIGN5PSIxMiIgcj0iMyIgZmlsbD0iY3VycmVudENvbG9yIj48YW5pbWF0ZSBpZD0ic3ZnU3Bpbm5lcnMzRG90c1NjYWxlMSIgYXR0cmlidXRlTmFtZT0iciIgYmVnaW49InN2Z1NwaW5uZXJzM0RvdHNTY2FsZTAuZW5kLTAuNDVzIiBkdXI9IjAuNzVzIiB2YWx1ZXM9IjM7LjI7MyIvPjwvY2lyY2xlPjwvc3ZnPg==" data-original="/medias/featureimages/6.jpg" class="responsive-img" alt="常见的Git提交规范类型">
                         
-                        <span class="card-title">CV</span>
+                        <span class="card-title">常见的Git提交规范类型</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            git commit -m "xxx"
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-06-16
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-09-09
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
-                            孙文强
+                            Jackson
                             
                         </span>
                     </div>
                 </div>
 
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Git/">
+                        <span class="chip bg-color">Git</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -803,37 +881,44 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/aboutme/index.html">
+                <a href="/2024/09/05/swap-elements/">
                     <div class="card-image">
                         
                         
-                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgdmlld0JveD0iMCAwIDI0IDI0Ij48Y2lyY2xlIGN4PSI0IiBjeT0iMTIiIHI9IjMiIGZpbGw9ImN1cnJlbnRDb2xvciI+PGFuaW1hdGUgaWQ9InN2Z1NwaW5uZXJzM0RvdHNTY2FsZTAiIGF0dHJpYnV0ZU5hbWU9InIiIGJlZ2luPSIwO3N2Z1NwaW5uZXJzM0RvdHNTY2FsZTEuZW5kLTAuMjVzIiBkdXI9IjAuNzVzIiB2YWx1ZXM9IjM7LjI7MyIvPjwvY2lyY2xlPjxjaXJjbGUgY3g9IjEyIiBjeT0iMTIiIHI9IjMiIGZpbGw9ImN1cnJlbnRDb2xvciI+PGFuaW1hdGUgYXR0cmlidXRlTmFtZT0iciIgYmVnaW49InN2Z1NwaW5uZXJzM0RvdHNTY2FsZTAuZW5kLTAuNnMiIGR1cj0iMC43NXMiIHZhbHVlcz0iMzsuMjszIi8+PC9jaXJjbGU+PGNpcmNsZSBjeD0iMjAiIGN5PSIxMiIgcj0iMyIgZmlsbD0iY3VycmVudENvbG9yIj48YW5pbWF0ZSBpZD0ic3ZnU3Bpbm5lcnMzRG90c1NjYWxlMSIgYXR0cmlidXRlTmFtZT0iciIgYmVnaW49InN2Z1NwaW5uZXJzM0RvdHNTY2FsZTAuZW5kLTAuNDVzIiBkdXI9IjAuNzVzIiB2YWx1ZXM9IjM7LjI7MyIvPjwvY2lyY2xlPjwvc3ZnPg==" data-original="/medias/featureimages/3.jpg" class="responsive-img" alt="CV">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgdmlld0JveD0iMCAwIDI0IDI0Ij48Y2lyY2xlIGN4PSI0IiBjeT0iMTIiIHI9IjMiIGZpbGw9ImN1cnJlbnRDb2xvciI+PGFuaW1hdGUgaWQ9InN2Z1NwaW5uZXJzM0RvdHNTY2FsZTAiIGF0dHJpYnV0ZU5hbWU9InIiIGJlZ2luPSIwO3N2Z1NwaW5uZXJzM0RvdHNTY2FsZTEuZW5kLTAuMjVzIiBkdXI9IjAuNzVzIiB2YWx1ZXM9IjM7LjI7MyIvPjwvY2lyY2xlPjxjaXJjbGUgY3g9IjEyIiBjeT0iMTIiIHI9IjMiIGZpbGw9ImN1cnJlbnRDb2xvciI+PGFuaW1hdGUgYXR0cmlidXRlTmFtZT0iciIgYmVnaW49InN2Z1NwaW5uZXJzM0RvdHNTY2FsZTAuZW5kLTAuNnMiIGR1cj0iMC43NXMiIHZhbHVlcz0iMzsuMjszIi8+PC9jaXJjbGU+PGNpcmNsZSBjeD0iMjAiIGN5PSIxMiIgcj0iMyIgZmlsbD0iY3VycmVudENvbG9yIj48YW5pbWF0ZSBpZD0ic3ZnU3Bpbm5lcnMzRG90c1NjYWxlMSIgYXR0cmlidXRlTmFtZT0iciIgYmVnaW49InN2Z1NwaW5uZXJzM0RvdHNTY2FsZTAuZW5kLTAuNDVzIiBkdXI9IjAuNzVzIiB2YWx1ZXM9IjM7LjI7MyIvPjwvY2lyY2xlPjwvc3ZnPg==" data-original="/medias/featureimages/0.jpg" class="responsive-img" alt="如何在JavaScript中交换两个数组元素">
                         
-                        <span class="card-title">CV</span>
+                        <span class="card-title">如何在JavaScript中交换两个数组元素</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            数组交换元素
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-06-16
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-09-05
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
-                            孙文强
+                            Jackson
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/JavaScript/">
+                        <span class="chip bg-color">JavaScript</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
